@@ -13,6 +13,9 @@ function RouteComponent() {
   const containerRef = useRef<HTMLDivElement>(null)
   const [windowHeight, setWindowHeight] = useState(0)
 
+  console.log(windowHeight);
+  
+
   const router = useRouter()
   const navigateToContact = () => {
     router.navigate({ to: '/contact' })
