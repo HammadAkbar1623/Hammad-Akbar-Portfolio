@@ -1,53 +1,15 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute, Link } from '@tanstack/react-router'
 import { motion } from 'framer-motion'
 import { useState, useEffect, useRef } from 'react'
-import { FiGithub, FiExternalLink } from 'react-icons/fi'
+import { FiGithub, FiExternalLink, FiFileText  } from 'react-icons/fi'
 import Navbar from '../../components/Navbar'
 import { useMemo } from 'react'
 import Footer from '../../components/Footer'
-import tufconnect from '../../assets/tuf-connect.jpg'
-import manifest from '../../assets/manifest.jpg'
-import aladal from '../../assets/Aladal.png'
-import carrent from '../../assets/carrent.png'
+import { projects } from '../../project-data.ts' 
 
 export const Route = createFileRoute('/projects/')({
     component: ProjectsPage,
 })
-
-const projects = [
-    {
-        title: "University Specific Social Media",
-        description: "Developed a Full-Stack social media platform for university students where they can connect, share, and collaborate. Connected over 300+ students. Read more about it on my Github.",
-        tech: ["MongoDB", "Express.js", "React Native", "Node"],
-        image: tufconnect,
-        github: "https://github.com/HammadAkbar1623/TUF-Connect.git",
-        demo: "https://tuffconnect.expo.app"
-    },
-    {
-        title: "AutoPause for YouTube - Smart video pausing for multitaskers",
-        description: "A lightweight Chrome extension that automatically pauses YouTube videos when you switch to another tab—perfect for users who get distracted or need to multitask without missing a beat.",
-        tech: ["Javascript", "Manifest V3", "Youtube DOM Scripting"],
-        image: manifest,
-        github: "https://github.com/HammadAkbar1623/Automatically-Pause-Play-Youtube-Video.git",
-        demo: "#"
-    },
-    {
-        title: "Al-Adal Consulting Solutions",
-        description: "A project for a consulting firm that provides various services to clients, including project management and consulting.",
-        tech: ["React Ts", "TailwindCSS", "Tanstack Router", "Email Js"],
-        image: aladal,
-        github: "https://github.com/HammadAkbar1623/Consulting-Website.git",
-        demo: "https://aladalconsultants.netlify.app/"
-    },
-    {
-        title: "Rent A Car Website",
-        description: "A car rental website that allows users to browse and rent cars online. The website features a user-friendly interface with both dark & light mode.",
-        tech: ["React Ts", "TailwindCSS"],
-        image: carrent,
-        github: "https://github.com/HammadAkbar1623/Car-Rental-Website.git",
-        demo: "https://niazicarrent.netlify.app/"
-    },
-]
 
 function ProjectsPage() {
     const [activeIndex, setActiveIndex] = useState(0)
@@ -142,7 +104,7 @@ function ProjectsPage() {
                     <div style={{ height: `${projects.length * 100}vh` }}>
                         {projects.map((project, index) => (
                             <motion.div
-                                key={index}
+                                key={project.id}
                                 className="h-screen w-full flex items-center justify-center p-4"
                                 style={{ position: 'sticky', top: 0 }}
                             >
@@ -194,15 +156,25 @@ function ProjectsPage() {
                                                 <FiGithub className="h-4 w-4" />
                                                 Code
                                             </a>
-                                            <a
-                                                href={project.demo}
+                                            {project.demo && project.demo !== "#" && (
+                                                <a
+                                                    href={project.demo}
+                                                    className="flex items-center gap-1 text-xs md:text-sm text-gray-300 hover:text-teal-300 transition-colors"
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                >
+                                                    <FiExternalLink className="h-4 w-4" />
+                                                    Demo
+                                                </a>
+                                            )}
+                                            <Link
+                                                to="/projects/$id"
+                                                params={{ id: project.id }}
                                                 className="flex items-center gap-1 text-xs md:text-sm text-gray-300 hover:text-teal-300 transition-colors"
-                                                target="_blank"
-                                                rel="noopener noreferrer"
                                             >
-                                                <FiExternalLink className="h-4 w-4" />
-                                                Demo
-                                            </a>
+                                                <FiFileText className="h-4 w-4" />
+                                                Case Study
+                                            </Link>
                                         </div>
                                     </div>
                                 </motion.div>
@@ -232,4 +204,3 @@ function ProjectsPage() {
         </>
     )
 }
-
