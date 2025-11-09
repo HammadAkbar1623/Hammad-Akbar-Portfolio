@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
 import { motion } from 'framer-motion'
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { FiArrowLeft, FiGithub, FiExternalLink, FiCalendar, FiUser, FiCode } from 'react-icons/fi'
+import { FiArrowLeft, FiGithub, FiExternalLink, FiUser, FiCode } from 'react-icons/fi'
 import { projects } from '../../project-data.ts'
 import { useRouter } from '@tanstack/react-router'
 export const Route = createFileRoute('/projects/$id')({
