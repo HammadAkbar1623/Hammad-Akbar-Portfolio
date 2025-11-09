@@ -4,7 +4,7 @@ import { useMemo } from "react";
 import Navbar from '../components/Navbar';
 import About from '../components/About';
 import Footer from '../components/Footer';
-import code from '../assets/code.js.png';
+import Code from '../assets/code.js.png';
 
 
 export const Route = createFileRoute('/')({
@@ -101,7 +101,7 @@ function RouteComponent() {
 
 
             <div className='rounded-md min-h-[100px] flex items-center justify-center'>
-              <img src= {code} alt="" />
+              <img src= {Code} alt="" />
             </div>
           </div>
         </div>
