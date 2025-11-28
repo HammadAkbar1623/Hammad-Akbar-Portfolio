@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hammadakbar.site/sitemap.xml
