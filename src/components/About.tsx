@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useEffect } from "react";
-import resume from "../assets/Updated Resume.pdf";
+import resume from "../assets/Hammad Resume.pdf";
 import portfolio from "../assets/Portfolio.jpg";
 
 
