@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useEffect } from "react";
 import resume from "../assets/Hammad Resume.pdf";
-import portfolio from "../assets/Portfolio.jpg";
+import MyImage from "../assets/MyImage.jpeg";
 
 
 function About() {
@@ -102,7 +102,7 @@ function About() {
         >
           <div className="relative w-full max-w-xs md:max-w-md rounded-lg overflow-hidden shadow-lg">
             <img
-              src = {portfolio}
+              src = {MyImage}
               alt="Profile"
               className="w-full h-full object-contain"
             />
