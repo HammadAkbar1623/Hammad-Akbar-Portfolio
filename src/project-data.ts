@@ -1,10 +1,84 @@
 import debateArena from "./assets/debateArena.jpg";
 import tufconnect from "./assets/tuf-connect.jpg";
 import manifest from "./assets/manifest.jpg";
-
-
+import ZarKhoon from "./assets/ZarKhoon.png";
 
 export const projects = [
+    {
+        id: "zarkhoon",
+
+        title: "ZarKhoon — Intelligent Emergency Blood Donation Platform",
+
+        description:
+            "Engineered a Full Stack location-aware blood donation platform that instantly connects blood donors with nearby patients during emergencies. Built real-time geospatial matching, push notification delivery, secure authentication, and live request management to minimize response time for critical blood requirements.",
+
+        tech: [
+            "Next.js",
+            "TypeScript",
+            "Supabase",
+            "PostgreSQL",
+            "Supabase Auth",
+            "Supabase Realtime",
+            "Geolocation API",
+            "Tailwind CSS"
+        ],
+
+        image: ZarKhoon,
+
+        github: "https://github.com/HammadAkbar1623/Zarkhoon.git",
+
+        demo: "https://zarkhoon.vercel.app/",
+
+        caseStudy: {
+            title: "🩸 ZarKhoon — Real-Time Location-Based Blood Donation Network",
+
+            overview:
+                "ZarKhoon is a Full Stack emergency blood donation platform designed to bridge the gap between blood donors and recipients. The platform uses real-time geolocation to identify compatible donors within a configurable radius and instantly sends push notifications, enabling rapid response during medical emergencies.",
+
+            problem:
+                "During emergencies, finding compatible blood donors is often slow and inefficient. Social media posts rarely reach the right people in time, while existing systems lack real-time location intelligence, instant communication, and targeted donor matching.",
+
+            solution:
+                "Developed a scalable location-aware platform using Next.js and Supabase where users register with their blood group and profile information. When a patient creates an emergency blood request, the system calculates nearby compatible donors within a 50 km radius and instantly delivers push notifications only to eligible users, significantly reducing the time required to find donors.",
+
+            features: [
+                "Secure authentication using Supabase Authentication.",
+                "Blood group-based donor registration and profile management.",
+                "Real-time emergency blood request posting.",
+                "Automatic geolocation capture for every request.",
+                "Geospatial filtering to identify compatible donors within a 50 km radius.",
+                "Instant push notifications using Supabase Realtime.",
+                "Live feed of active blood requests with real-time Supabase updates.",
+                "One-click donor response workflow for faster coordination.",
+                "Responsive, mobile-first UI optimized for emergency situations."
+            ],
+
+            techStack: [
+                "Frontend: Next.js, React, TypeScript, Tailwind CSS",
+                "Backend: Supabase",
+                "Authentication: Supabase Auth",
+                "Notifications: Supabase Realtime",
+                "Database: PostgreSQL",
+                "Location Services: HTML5 Geolocation API + Radius-based Geo Queries",
+                "Hosting: Vercel"
+            ],
+
+            keyFeatures: [
+                "Real-time geospatial donor matching.",
+                "Radius-based notification delivery (50 km).",
+                "Instant emergency alerts via push notifications.",
+                "Live synchronized Supabase database updates.",
+                "Scalable serverless architecture with Supabase.",
+                "Responsive and optimized emergency-first user experience."
+            ],
+
+            outcome:
+                "Built a production-ready MVP demonstrating how real-time geolocation and targeted push notifications can dramatically reduce donor discovery time. The architecture is designed to scale for city-wide or nationwide deployments while ensuring notifications reach only relevant nearby donors.",
+
+            role:
+                "Designed the complete system architecture and independently developed the frontend, backend, authentication, Supabase data model, real-time notification pipeline, geolocation-based donor matching logic, and deployment."
+        }
+    },
     {
         id: 'debate-arena',
         title: "Debate Arena - Mobile App MVP",
@@ -44,43 +118,43 @@ export const projects = [
         }
     },
     {
-    id: 'tuf-connect',
-    title: "University Specific Social Media",
-    description: "Developed a Full-Stack social media platform for university students where they can connect, share, and collaborate. Connected over 300+ students. Read more about it on my Github.",
-    tech: ["MongoDB", "Express.js", "React Native", "Node", "Cloudinary"],
-    image: tufconnect,
-    github: "https://github.com/HammadAkbar1623/TUF-Connect.git",
-    demo: "https://tuffconnect.expo.app",
-    caseStudy: {
-        title: "TUF Connect - University Social Media Platform",
-        overview: "A dedicated social media app for university students to share time-limited posts based on shared interests, ensuring exclusive access and focused interactions.",
-        problem: "University students often have only brief windows of free time (e.g., 1 hour) and need a secure, internal platform to connect with peers based on specific interests without interference from outsiders or irrelevant content.",
-        solution: "Developed a full-stack mobile app with university email registration, interest-based hashtags, and auto-expiring posts to facilitate quick, targeted sharing within the university community.",
-        features: [
-            "Registration restricted to university email with OTP verification",
-            "Interest selection via hashtags (study, sports, society, fun, universal)",
-            "Post creation with chosen hashtags, visible only to users with matching interests",
-            "Automatic post deletion after 1 hour or manual deletion via swipe",
-            "Settings for updating password, username, account name, profile picture, hashtags, and bio",
-            "Profile picture storage and management using Cloudinary"
-        ],
-        techStack: [
-            "Frontend: React Native",
-            "Backend: Node.js, Express.js",
-            "Database: MongoDB",
-            "Storage: Cloudinary",
-            "Authentication: OTP via email"
-        ],
-        keyFeatures: [
-            "University-exclusive access via email verification",
-            "Interest-based content filtering with hashtags",
-            "Time-limited posts for quick interactions",
-            "User profile customization and management"
-        ],
-        outcome: "Successfully connected 300+ students, enabling efficient sharing and collaboration during limited free time slots.",
-        role: "Full-stack development, database design, and deployment"
-    }
-},
+        id: 'tuf-connect',
+        title: "University Specific Social Media",
+        description: "Developed a Full-Stack social media platform for university students where they can connect, share, and collaborate. Connected over 300+ students. Read more about it on my Github.",
+        tech: ["MongoDB", "Express.js", "React Native", "Node", "Cloudinary"],
+        image: tufconnect,
+        github: "https://github.com/HammadAkbar1623/TUF-Connect.git",
+        demo: "https://tuffconnect.expo.app",
+        caseStudy: {
+            title: "TUF Connect - University Social Media Platform",
+            overview: "A dedicated social media app for university students to share time-limited posts based on shared interests, ensuring exclusive access and focused interactions.",
+            problem: "University students often have only brief windows of free time (e.g., 1 hour) and need a secure, internal platform to connect with peers based on specific interests without interference from outsiders or irrelevant content.",
+            solution: "Developed a full-stack mobile app with university email registration, interest-based hashtags, and auto-expiring posts to facilitate quick, targeted sharing within the university community.",
+            features: [
+                "Registration restricted to university email with OTP verification",
+                "Interest selection via hashtags (study, sports, society, fun, universal)",
+                "Post creation with chosen hashtags, visible only to users with matching interests",
+                "Automatic post deletion after 1 hour or manual deletion via swipe",
+                "Settings for updating password, username, account name, profile picture, hashtags, and bio",
+                "Profile picture storage and management using Cloudinary"
+            ],
+            techStack: [
+                "Frontend: React Native",
+                "Backend: Node.js, Express.js",
+                "Database: MongoDB",
+                "Storage: Cloudinary",
+                "Authentication: OTP via email"
+            ],
+            keyFeatures: [
+                "University-exclusive access via email verification",
+                "Interest-based content filtering with hashtags",
+                "Time-limited posts for quick interactions",
+                "User profile customization and management"
+            ],
+            outcome: "Successfully connected 300+ students, enabling efficient sharing and collaboration during limited free time slots.",
+            role: "Full-stack development, database design, and deployment"
+        }
+    },
 
     {
         id: 'auto-pause-for-youtube',
