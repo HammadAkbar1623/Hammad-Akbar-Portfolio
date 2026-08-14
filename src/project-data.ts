@@ -2,8 +2,103 @@ import debateArena from "./assets/debateArena.jpg";
 import tufconnect from "./assets/tuf-connect.jpg";
 import manifest from "./assets/manifest.jpg";
 import ZarKhoon from "./assets/ZarKhoon.png";
-
+import AiHomeDesign from "./assets/AIHomeDesign.png";
 export const projects = [
+
+    {
+    id: "ai-home-design",
+
+    title: "AI Home Designer — AI-Powered 3D Home Visualization Platform",
+
+    description:
+        "Engineered an AI-powered home design platform that transforms natural-language requirements into structured architectural concepts, interactive 3D home visualizations, and real-world map-based previews. Built an iterative AI design workflow allowing users to refine homes through conversational prompts and export 2D SVG blueprints and PNG renders.",
+
+    tech: [
+        "Vite",
+        "React",
+        "TypeScript",
+        "Claude Opus 4.8",
+        "Anthropic SDK",
+        "Zod",
+        "Three.js",
+        "MapLibre GL",
+        "Zustand",
+        "Nominatim",
+        "CARTO"
+    ],
+
+    image: AiHomeDesign,
+
+    github: "/projects",
+
+    demo: "https://plot-ai-tau.vercel.app/",
+
+    caseStudy: {
+        title: "🏠 AI Home Designer — From Natural Language to 3D Reality",
+
+        overview:
+            "AI Home Designer is an AI-powered home visualization platform that allows users to describe their ideal home using natural language and instantly turn those requirements into an interactive 3D design. Users can continuously refine the design through conversational prompts, visualize the completed home on a real-world map, and export the result as a 2D SVG architectural layout or PNG image.",
+
+        problem:
+            "Designing and visualizing a home often requires multiple tools, technical architectural knowledge, and repeated communication between homeowners, architects, and construction teams. Early-stage ideas can be difficult to communicate visually, while changing a design can require significant manual work. There is a need for a simpler way to turn a client's idea into something they can immediately see, understand, and iterate on.",
+
+        solution:
+            "Developed an AI-driven design workflow where users describe their requirements in natural language and Claude generates a validated structured home specification. The specification is interpreted by Three.js to create an interactive 3D environment. Users can then request changes conversationally, allowing the design to evolve without manually rebuilding the scene. Once satisfied, the design can be placed on a real-world MapLibre map for geographic visualization and exported into usable 2D and image formats.",
+
+        features: [
+            "Natural-language home design generation using Claude Opus 4.8.",
+            "Structured AI outputs validated with Zod schemas.",
+            "Conversational design iteration allowing users to request modifications.",
+            "Interactive 3D home rendering powered by Three.js.",
+            "Real-world geographic visualization using MapLibre GL.",
+            "Geocoded location search using Nominatim.",
+            "Georeferenced custom 3D home layer displayed directly on the map.",
+            "Live basemap integration using CARTO.",
+            "2D SVG export for architectural and floor-plan reference.",
+            "PNG export for sharing and presenting home designs.",
+            "Centralized application state management using Zustand.",
+            "AI API protection through rate limiting and controlled request handling.",
+            "Token-aware prompting and structured responses to improve API efficiency.",
+            "Prompt engineering designed to produce consistent and predictable architectural specifications."
+        ],
+
+        techStack: [
+            "Frontend: React, TypeScript, Vite",
+            "AI: Claude Opus 4.8 via Anthropic SDK",
+            "AI Reliability: Structured Outputs + Zod validation",
+            "3D Visualization: Three.js",
+            "Mapping: MapLibre GL",
+            "Geocoding: Nominatim",
+            "Basemap: CARTO",
+            "State Management: Zustand",
+            "Exports: SVG + PNG"
+        ],
+
+        keyFeatures: [
+            "AI-powered natural-language home generation.",
+            "Conversational design refinement workflow.",
+            "Structured AI-to-3D rendering pipeline.",
+            "Interactive Three.js architectural visualization.",
+            "Real-world map-based home placement.",
+            "Georeferenced 3D visualization on live maps.",
+            "2D SVG architectural layout export.",
+            "PNG design export.",
+            "Schema validation for reliable AI-generated specifications.",
+            "Rate limiting to control API usage and prevent abuse.",
+            "Token-conscious prompt engineering for better performance and cost control.",
+            "Modular architecture designed for future AI and visualization capabilities."
+        ],
+
+        aiEngineering:
+            "Designed the AI layer as a structured generation pipeline rather than relying on free-form text responses. Claude Opus 4.8 receives carefully engineered prompts and produces structured home specifications that are validated through Zod before being consumed by the rendering engine. Implemented prompt engineering to maintain consistency between design iterations, token-aware request construction to reduce unnecessary API usage, rate limiting to protect the API layer from excessive requests, and controlled AI interactions so generated data remains predictable and usable by the application.",
+
+        outcome:
+            "Built a functional AI product MVP demonstrating how natural-language AI can be combined with 3D graphics and geospatial visualization to simplify an otherwise complex design workflow. The platform creates a complete flow from idea → AI-generated specification → interactive 3D home → iterative refinement → real-world map visualization → exportable design. The architecture provides a foundation for expanding into professional architectural visualization, construction planning, real-estate presentations, property development, and client collaboration workflows.",
+
+        role:
+            "Designed and independently developed the complete product workflow, including the AI generation architecture, prompt engineering, structured output validation, rate limiting strategy, token-aware API usage, React interface, Three.js rendering system, MapLibre integration, georeferenced 3D map layer, location search, application state management, and SVG/PNG export functionality."
+    }
+},
     {
         id: "zarkhoon",
 

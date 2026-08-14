@@ -46,7 +46,7 @@ function ProjectsPage() {
 
         const handleScroll = () => {
             const scrollTop = container.scrollTop
-            const newIndex = Math.round(scrollTop / windowHeight)
+            const newIndex = Math.min(Math.round(scrollTop / windowHeight), projects.length - 1)
             setActiveIndex(newIndex)
         }
 
@@ -96,20 +96,21 @@ function ProjectsPage() {
                 <div className="absolute inset-0 bg-gradient-to-b from-purple-500/10 to-transparent" />
             </div>
 
-            <div className="relative h-screen w-full sm:top-16">
+            <div className="relative w-full">
                 <div
                     ref={containerRef}
                     className="h-screen w-full overflow-y-scroll scrollbar-hide"
                 >
-                    <div style={{ height: `${projects.length * 100}vh` }}>
+                    <div style={{ height: `${(projects.length + 1) * 100}vh` }}>
                         {projects.map((project, index) => (
                             <motion.div
                                 key={project.id}
-                                className="h-screen w-full flex items-center justify-center p-4"
-                                style={{ position: 'sticky', top: 0 }}
+                                className="h-screen w-full flex justify-center p-4"
+                                style={{ position: 'sticky', top: '5.5rem' }}
                             >
                                 <motion.div
-                                    className="relative bg-gray-900 rounded-xl shadow-xl w-full max-w-lg mx-4 overflow-hidden border border-gray-700"
+                                    className="relative bg-gray-900 rounded-xl shadow-xl w-full max-w-lg mx-4 overflow-hidden border border-gray-700 flex flex-col justify-between"
+                                    style={{ maxHeight: 'calc(100vh - 8.5rem)' }}
                                     initial={{ scale: 0.95, opacity: 0 }}
                                     animate={{
                                         scale: activeIndex === index ? 1 : 0.95,
@@ -118,7 +119,7 @@ function ProjectsPage() {
                                     }}
                                     transition={{ type: 'spring', stiffness: 100, damping: 20 }}
                                 >
-                                    <div className="relative h-40 md:h-48 lg:h-56 overflow-hidden">
+                                    <div className="relative h-40 md:h-48 lg:h-56 shrink-0 overflow-hidden">
                                         <img
                                             src={project.image}
                                             alt={project.title}
@@ -127,26 +128,28 @@ function ProjectsPage() {
                                         <div className="absolute inset-0 bg-gradient-to-t from-gray-900/90 to-transparent" />
                                     </div>
 
-                                    <div className="p-4 md:p-5">
-                                        <h3 className="text-lg md:text-xl font-bold text-white mb-2">
-                                            {project.title}
-                                        </h3>
-                                        <p className="text-xs md:text-sm text-gray-300 mb-3">
-                                            {project.description}
-                                        </p>
+                                    <div className="p-4 md:p-5 flex flex-col justify-between grow overflow-y-auto">
+                                        <div>
+                                            <h3 className="text-lg md:text-xl font-bold text-white mb-2">
+                                                {project.title}
+                                            </h3>
+                                            <p className="text-xs md:text-sm text-gray-300 mb-3">
+                                                {project.description}
+                                            </p>
 
-                                        <div className="flex flex-wrap gap-2 mb-3">
-                                            {project.tech.map((tech, techIndex) => (
-                                                <span
-                                                    key={techIndex}
-                                                    className="px-2 py-1 bg-gray-800 rounded-full text-xs text-teal-400"
-                                                >
-                                                    {tech}
-                                                </span>
-                                            ))}
+                                            <div className="flex flex-wrap gap-2 mb-3">
+                                                {project.tech.map((tech, techIndex) => (
+                                                    <span
+                                                        key={techIndex}
+                                                        className="px-2 py-1 bg-gray-800 rounded-full text-xs text-teal-400"
+                                                    >
+                                                        {tech}
+                                                    </span>
+                                                ))}
+                                            </div>
                                         </div>
 
-                                        <div className="flex gap-3">
+                                        <div className="flex gap-3 shrink-0">
                                             <a
                                                 href={project.github}
                                                 className="flex items-center gap-1 text-xs md:text-sm text-gray-300 hover:text-teal-300 transition-colors"
@@ -180,6 +183,12 @@ function ProjectsPage() {
                                 </motion.div>
                             </motion.div>
                         ))}
+
+                        <div className="h-screen w-full flex flex-col justify-end pointer-events-none" style={{ position: 'sticky', top: 0 }}>
+                            <div className="w-full pointer-events-auto">
+                                <Footer />
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -196,10 +205,6 @@ function ProjectsPage() {
                         />
                     ))}
                 </div>
-            </div>
-
-            <div className="relative z-10">
-                <Footer />
             </div>
         </>
     )
