@@ -2,7 +2,7 @@ import debateArena from "./assets/debateArena.jpg";
 import tufconnect from "./assets/tuf-connect.jpg";
 import manifest from "./assets/manifest.jpg";
 import ZarKhoon from "./assets/ZarKhoon.png";
-import AiHomeDesign from "./assets/AIHomeDesign.png";
+import AiHomeDesign from "./assets/AiHomeDesign.png";
 export const projects = [
 
     {
